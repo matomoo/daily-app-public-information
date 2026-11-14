@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily — Informasi Publik & Pusat Kebijakan</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-hover: #172133;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #10b981;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+      --border: #1f2937;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 20px 80px 20px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px 20px 20px;
+    }
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(16, 185, 129, 0.25);
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #34d399;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    .subtitle {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 20px;
+    }
+    .banner-wrapper {
+      margin-bottom: 40px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 26px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .card:hover {
+      background: var(--card-hover);
+      border-color: rgba(16, 185, 129, 0.4);
+      transform: translateY(-2px);
+    }
+    .card-top {
+      margin-bottom: 16px;
+    }
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .card-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .card-action {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #34d399;
+      margin-top: 14px;
+    }
+    .info-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 26px;
+      margin-bottom: 30px;
+    }
+    .info-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .info-table {
+      width: 100%;
+      font-size: 14px;
+      border-collapse: collapse;
+    }
+    .info-table td {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .info-table td:first-child {
+      color: var(--text-muted);
+      width: 180px;
+    }
+    .info-table td:last-child {
+      color: #f3f4f6;
+      font-weight: 600;
+    }
+    code {
+      background: #1f2937;
+      color: #34d399;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    footer {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: #6b7280;
+    }
+    footer a {
+      color: #9ca3af;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #34d399;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <img src="icon-512.png" alt="Daily Icon" class="app-icon" />
+      <div>
+        <span class="badge">Google Play Official Store Information Hub</span>
+      </div>
+      <h1>Daily</h1>
+      <p class="subtitle">
+        Aplikasi produktivitas personal terpadu: Todo Timeline, Pelacak Kebiasaan Harian (Habits), Buku Catatan (Notes), dan Mushaf Al-Qur'an 604 Halaman Madinah (QPC2).
+      </p>
+    </div>
+
+    <div class="banner-wrapper">
+      <img src="feature-graphic-1024x500.png" alt="Daily Feature Graphic Banner" class="banner-img" />
+    </div>
+
+    <div class="grid">
+      <!-- 1. Privacy Policy -->
+      <a href="privacy-policy.html" class="card">
+        <div class="card-top">
+          <div class="card-icon">🛡️</div>
+          <div class="card-title">Kebijakan Privasi (Privacy Policy)</div>
+          <div class="card-desc">
+            Informasi lengkap mengenai perlindungan data pribadi, izin sistem Android (notifikasi & alarm), serta kepatuhan privasi pengguna.
+          </div>
+        </div>
+        <div class="card-action">Buka Kebijakan Privasi &rarr;</div>
+      </a>
+
+      <!-- 2. Account Deletion -->
+      <a href="delete-account.html" class="card">
+        <div class="card-top">
+          <div class="card-icon">⚠️</div>
+          <div class="card-title">Hapus Akun & Data (Account Deletion)</div>
+          <div class="card-desc">
+            Panduan dan formulir permohonan penghapusan akun serta penghapusan seluruh data pengguna secara permanen dari server.
+          </div>
+        </div>
+        <div class="card-action">Buka Prosedur Hapus Akun &rarr;</div>
+      </a>
+
+      <!-- 3. Terms of Service -->
+      <a href="terms.html" class="card">
+        <div class="card-top">
+          <div class="card-icon">📜</div>
+          <div class="card-title">Ketentuan Layanan (Terms of Service)</div>
+          <div class="card-desc">
+            Syarat dan ketentuan hukum penggunaan aplikasi Daily, lisensi teks mushaf Madinah KFGQPC, dan tanggung jawab pengguna.
+          </div>
+        </div>
+        <div class="card-action">Buka Ketentuan Layanan &rarr;</div>
+      </a>
+
+      <!-- 4. Support & Help -->
+      <a href="support.html" class="card">
+        <div class="card-top">
+          <div class="card-icon">💬</div>
+          <div class="card-title">Pusat Bantuan & Kontak Dukungan</div>
+          <div class="card-desc">
+            Pertanyaan umum (FAQ), solusi notifikasi Android agar tepat waktu di berbagai tipe HP, dan email pengembang.
+          </div>
+        </div>
+        <div class="card-action">Buka Pusat Bantuan &rarr;</div>
+      </a>
+    </div>
+
+    <div class="info-section">
+      <div class="info-title">📱 Metadata Aplikasi Android (Google Play Console)</div>
+      <table class="info-table">
+        <tr>
+          <td>Nama Aplikasi</td>
+          <td>Daily</td>
+        </tr>
+        <tr>
+          <td>Application ID / Package</td>
+          <td><code>id.bymato.dailyapp</code></td>
+        </tr>
+        <tr>
+          <td>Target SDK</td>
+          <td>Android 15 (API level 35)</td>
+        </tr>
+        <tr>
+          <td>Pengembang</td>
+          <td>ByMato (Rahmat Hidayat)</td>
+        </tr>
+        <tr>
+          <td>Kontak Dukungan</td>
+          <td><code>me.rahmat.hidayat@gmail.com</code></td>
+        </tr>
+      </table>
+    </div>
+
+    <footer>
+      &copy; 2026 Daily by ByMato. All rights reserved. &bull; <a href="https://github.com/matomoo/daily-app-public-information">GitHub Repository</a>
+    </footer>
+  </div>
+</body>
+</html>
